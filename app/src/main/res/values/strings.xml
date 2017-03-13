@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">调试工具</string>
+    <string name="share">分享</string>
+    <string name="showUser">获取信息</string>
+    <string name="authorize">授权</string>
+    <string name="state">默认设置为中国，有需要进到代码自行设置!\n\n\n</string>
+</resources>

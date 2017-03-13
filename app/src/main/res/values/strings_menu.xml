@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="menu_item">
+        <item>分享,1,ShareFragment</item>
+        <item>授权,2,AuthorizeFragment</item>
+        <item>短信,3,SmsFragment</item>
+        <item>检查,4,ReviewFragment</item>
+        <item>Rec,5,RecFragment</item>
+        <item>Http,6,HttpFragment</item>
+    </string-array>
+    <string-array
+        name="params">
+        <item>title</item>
+        <item>text</item>
+        <item>titleurl</item>
+        <item>url</item>
+        <item>imageurl</item>
+        <item>imagepath</item>
+        <item>musicurl</item>
+        <item>filepath</item>
+        <item>sharetype</item>
+    </string-array>
+</resources>

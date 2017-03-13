@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/okhttp_GET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get"
+            />
+        <Button
+            android:id="@+id/okhttp_Post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post"
+            />
+        <Button
+            android:id="@+id/okhttp_PostString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PostString"
+            />
+        <Button
+            android:id="@+id/okhttp_PostFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PostFile"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/okhttp_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

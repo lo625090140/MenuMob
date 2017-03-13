@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/y3"
+        android:paddingBottom="@dimen/y3">
+        <ImageView
+            android:layout_width="@dimen/x38"
+            android:layout_height="@dimen/y32"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="@dimen/x5"
+            android:src="@android:color/holo_blue_bright"
+            android:id="@+id/fragment_authorize_item_platform_icon"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/fragment_authorize_item_platform_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/fragment_authorize_item_platform_icon"
+            android:layout_marginLeft="@dimen/x10"
+            android:textSize="@dimen/y10"
+            />
+        <CheckBox
+            android:focusable="false"
+            android:checked="true"
+            android:id="@+id/fragment_authorize_item_platform_judge"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

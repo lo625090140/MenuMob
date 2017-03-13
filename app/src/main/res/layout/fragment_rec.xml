@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <RadioGroup
+        android:id="@+id/tvExpl_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:minHeight="48.0dip"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/SystemRecorder_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SystemRecorder" />
+
+        <RadioButton
+            android:id="@+id/ViewRecorder_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ViewRecorder" />
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/path_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvExpl_rec"
+        android:layout_alignRight="@id/tvExpl_rec"
+        android:layout_below="@id/tvExpl_rec"
+        android:hint="输入录制的路径不输入则使用默认路径"
+        android:minHeight="48.0dip"
+        android:singleLine="true" />
+
+
+    <RelativeLayout
+        android:id="@+id/btnCal_rec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvExpl_rec"
+        android:layout_alignRight="@id/tvExpl_rec"
+        android:layout_below="@id/path_rec"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pause_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:minHeight="48.0dip"
+            android:text="暂停录制" />
+
+        <Button
+            android:id="@+id/restore_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:minHeight="48.0dip"
+            android:text="恢复录制" />
+
+        <Button
+            android:id="@+id/stop_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:minHeight="48.0dip"
+            android:text="停止录制" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/start_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvExpl_rec"
+        android:layout_alignRight="@id/tvExpl_rec"
+        android:layout_below="@id/btnCal_rec"
+        android:minHeight="48.0dip"
+        android:text="启动录制" />
+
+</RelativeLayout>
