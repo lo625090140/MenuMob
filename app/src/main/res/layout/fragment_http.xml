@@ -35,18 +35,25 @@
             android:text="PostFile"
             />
         <Button
-        android:id="@+id/okhttp_Upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload"
-        />
+            android:id="@+id/okhttp_Upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            />
+        <Button
+            android:id="@+id/okhttp_Download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download"
+            />
 
 
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical" android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/okhttp_Text"
@@ -54,6 +61,14 @@
             android:layout_height="wrap_content"
             android:text="null"
             />
+
+        <ImageView
+            android:layout_marginTop="@dimen/y50"
+            android:id="@+id/okhttp_Image"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:layout_weight="0.43" />
 
     </LinearLayout>
 

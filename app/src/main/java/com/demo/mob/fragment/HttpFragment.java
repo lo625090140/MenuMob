@@ -1,21 +1,27 @@
 package com.demo.mob.fragment;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.ClipboardManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.demo.mob.activity.R;
 import com.demo.mob.utils.App;
 import com.demo.mob.utils.BaseFragment;
+import com.demo.mob.utils.BitmapUtil;
 import com.demo.mob.utils.GetSignatures;
 import com.demo.mob.utils.Logs;
 import com.demo.mob.utils.ToastUtil;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -34,6 +40,7 @@ import okhttp3.Response;
 public class HttpFragment extends BaseFragment{
     private OkHttpClient okHttpClient = new OkHttpClient();
     private TextView result;
+    private ImageView img;
     //http://localhost:8185/Test/login?username=haha&password=123
     private String baseurl = "http://192.168.44.191:8185/Test/";
 
@@ -49,7 +56,9 @@ public class HttpFragment extends BaseFragment{
         view.findViewById(R.id.okhttp_Post).setOnClickListener(this);
         view.findViewById(R.id.okhttp_PostFile).setOnClickListener(this);
         view.findViewById(R.id.okhttp_Upload).setOnClickListener(this);
+        view.findViewById(R.id.okhttp_Download).setOnClickListener(this);
         result = (TextView) view.findViewById(R.id.okhttp_Text);
+        img = (ImageView) view.findViewById(R.id.okhttp_Image);
     }
 
 
@@ -123,7 +132,56 @@ public class HttpFragment extends BaseFragment{
         executeRequest(request);
     }
 
+    //下载文件
+    private void doDownload(){
+        Request.Builder builder = new Request.Builder();
+        Request request = builder.get().url(baseurl + "files/nihao.jpg").build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            //失败
+            @Override
+            public void onFailure(Call call,final IOException e) {
+                Logs.e(Tag,"onFailure : " + e.getMessage());
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        result.setText("onFailure : \n" + e.getMessage());
+                    }
+                });
+                e.printStackTrace();
+            }
+            //响应,不是UI线程的回调
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                InputStream is = response.body().byteStream();
+                FileOutputStream fos = new FileOutputStream(new File(App.PATH));
+                int len = 0;
+                byte[] bt = new byte[128];
+                while ((len = is.read(bt)) != -1) {
+                    fos.write(bt,0,len);
+                }
+                fos.flush();
+                fos.close();
+                is.close();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Bitmap bitmap = null;
+                        try {
+                            bitmap = BitmapUtil.getBitmapFormPath(App.PATH);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        img.setImageBitmap(bitmap);
+                    }
+                });
+            }
+        });
+    }
 
+
+
+    //请求封装类
     private void executeRequest(Request request) {
         //3.将Request封装成Call
         Call call = okHttpClient.newCall(request);
@@ -184,6 +242,9 @@ public class HttpFragment extends BaseFragment{
                 break;
             case R.id.okhttp_Upload:
                 doUpload();
+                break;
+            case R.id.okhttp_Download:
+                doDownload();
                 break;
         }
     }
