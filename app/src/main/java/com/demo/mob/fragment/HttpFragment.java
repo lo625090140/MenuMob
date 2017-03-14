@@ -138,7 +138,7 @@ public class HttpFragment extends BaseFragment{
         Request request = builder.get().url(baseurl + "files/nihao.jpg").build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
-            //失败
+            //失败_啊
             @Override
             public void onFailure(Call call,final IOException e) {
                 Logs.e(Tag,"onFailure : " + e.getMessage());
