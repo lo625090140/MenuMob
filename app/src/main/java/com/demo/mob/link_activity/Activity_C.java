@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.demo.mob.activity.R;
 import com.demo.mob.utils.BaseActivity;
@@ -58,8 +59,7 @@ public class Activity_C extends BaseActivity {
                                 }
                             }
                         }
-
-
+                        ((TextView)findViewById(R.id.text_C_content)).setText(source + "\n" + paramStr);
                     }
                 });
             }

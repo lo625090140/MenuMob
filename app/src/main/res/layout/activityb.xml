@@ -15,4 +15,9 @@
         android:layout_height="wrap_content"
         android:textSize="100sp"
         android:text="B" />
+    <TextView
+        android:id="@+id/text_B_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B" />
 </RelativeLayout>

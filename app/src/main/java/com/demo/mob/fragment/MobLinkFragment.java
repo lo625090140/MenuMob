@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.demo.mob.activity.R;
 import com.demo.mob.utils.BaseFragment;
@@ -67,7 +66,7 @@ public class  MobLinkFragment extends BaseFragment{
             case R.id.mobid:
                 HashMap<String, Object> params = new HashMap<String, Object>();
                 String source = "mob";
-                MobLink.getMobID(null, MAIN_PATH_ARR[selectedID], source, new ActionListener() {
+                MobLink.getMobID(params, MAIN_PATH_ARR[selectedID], source, new ActionListener() {
                     public void onResult(HashMap<String, Object> params) {
                         if (params != null && params.containsKey("mobID")) {
                             mobID = String.valueOf(params.get("mobID"));
