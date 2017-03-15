@@ -30,7 +30,7 @@ import cn.sharesdk.wechat.friends.Wechat;
  */
 
 public class  MobLinkFragment extends BaseFragment{
-    public static final String[] MAIN_PATH_ARR = {"/demo/a", "/demo/b", "/demo/c"};
+    public static final String[] MAIN_PATH_ARR = {"/demo/a", "/demo/b", "/demo/c","/demo/input"};
     public static final String IP = "192.168.44.191:8185";
     public static final String SHARE_URL = "http://" + IP + "/Test";//"http://f.moblink.mob.com";
     public static final String APPKEY = "1c12352b1abd0";//"1b8898cb51ccb";//正式部署到测试环境 //测试 d9b58a07cbf4
@@ -53,6 +53,14 @@ public class  MobLinkFragment extends BaseFragment{
         view.findViewById(R.id.mobid).setOnClickListener(this);
         view.findViewById(R.id.share).setOnClickListener(this);
         (tv = (TextView) view.findViewById(R.id.text)).setOnClickListener(this);
+        tv.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                selectedID = 3;
+                ToastUtil.show(context,"OK");
+                return true;
+            }
+        });
     }
 
     @Override

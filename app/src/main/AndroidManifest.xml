@@ -167,6 +167,18 @@
                 <data android:scheme="mlink" android:host="com.mob.moblink" android:path="/demo/c"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.demo.mob.link_activity.Activity_Input"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="mlink" android:host="com.mob.moblink" android:path="/demo/input"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

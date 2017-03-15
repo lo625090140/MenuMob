@@ -146,7 +146,7 @@ public class HttpFragment extends BaseFragment{
     //下载文件
     private void doDownload(){
         Request.Builder builder = new Request.Builder();
-        Request request = builder.get().url(baseurl + "files/nihao.jpg").build();
+        Request request = builder.get().url(baseurl + "demo/tp.jpg").build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
             //失败_啊
