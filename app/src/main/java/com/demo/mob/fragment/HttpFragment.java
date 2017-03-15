@@ -22,10 +22,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
 import okhttp3.FormBody;
+import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -51,6 +59,9 @@ public class HttpFragment extends BaseFragment{
 
     @Override
     protected void initContentView(Bundle savedInstanceState) {
+
+
+
         view.findViewById(R.id.okhttp_GET).setOnClickListener(this);
         view.findViewById(R.id.okhttp_PostString).setOnClickListener(this);
         view.findViewById(R.id.okhttp_Post).setOnClickListener(this);
@@ -153,12 +164,17 @@ public class HttpFragment extends BaseFragment{
             //响应,不是UI线程的回调
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+
+                long total = response.body().contentLength();
+                long sum = 0L;
                 InputStream is = response.body().byteStream();
                 FileOutputStream fos = new FileOutputStream(new File(App.PATH));
                 int len = 0;
                 byte[] bt = new byte[128];
                 while ((len = is.read(bt)) != -1) {
                     fos.write(bt,0,len);
+                    sum += len;
+                    Logs.e(Tag,sum + "/" + total);
                 }
                 fos.flush();
                 fos.close();
