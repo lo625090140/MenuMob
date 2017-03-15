@@ -23,6 +23,7 @@ import java.util.HashMap;
 
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 import cn.sharesdk.wechat.friends.Wechat;
 
 /**
@@ -102,14 +103,23 @@ public class  MobLinkFragment extends BaseFragment{
                 String title = "我是测试的Title";
                 String text = "我是测试的Text";
                 String imgPath = copyImgToSD(context, R.mipmap.ic_launcher , "moblink");
-                Platform.ShareParams sp = new Platform.ShareParams();
-                sp.setTitle(title);;
-                sp.setText(text);
-                sp.setImagePath(imgPath);
-                sp.setUrl(shareUrl);
-                sp.setShareType(Platform.SHARE_WEBPAGE);
-                Platform plat = ShareSDK.getPlatform(Wechat.NAME);
-                plat.share(sp);
+                OnekeyShare oks = new OnekeyShare();
+                oks.setTitle(title);;
+                oks.setText(text);
+                oks.setImagePath(imgPath);
+                oks.setUrl(shareUrl);
+                oks.setTitleUrl(shareUrl);
+                Platform[] plats = ShareSDK.getPlatformList();
+                for (Platform p : plats) {
+                    if (!(p.getName().equals("SinaWeibo") ||
+                            p.getName().equals("QZone") ||
+                            p.getName().equals("QQ") ||
+                            p.getName().equals("Wechat") ||
+                            p.getName().equals("WechatMoments"))){
+                        oks.addHiddenPlatform(p.getName());
+                    }
+                }
+                oks.show(context);
                 break;
             case R.id.text:
                 if (tv.getText().toString().trim().equals("A")){

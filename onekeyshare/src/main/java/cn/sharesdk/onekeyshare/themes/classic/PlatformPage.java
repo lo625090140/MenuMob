@@ -48,7 +48,7 @@ public abstract class PlatformPage extends OnekeySharePage {
 	}
 
 	public void onCreate() {
-		activity.getWindow().setBackgroundDrawable(new ColorDrawable(0x4c000000));
+		activity.getWindow().setBackgroundDrawable(new ColorDrawable(0x00000000));
 		initAnims();
 
 		LinearLayout llPage = new LinearLayout(activity);
