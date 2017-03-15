@@ -50,6 +50,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
     compile project(':onekeyshare')
+    compile project(':moblink')
     compile project(':bmob')
     compile project(':rec')
 }
