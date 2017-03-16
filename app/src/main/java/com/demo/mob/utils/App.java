@@ -13,6 +13,7 @@ import cn.jpush.android.api.JPushInterface;
 public class App extends Application{
 	public final static String SMS_KEY = "15121e7272aa8";
 	public final static String SMS_SECRET = "e47a6dbc24f8fecff5479ad7f4ede7ac";
+	public static final String LINK_APPKEY = "1c25eec125a1e";//"1b8898cb51ccb";//正式部署到测试环境 //测试 d9b58a07cbf4
 //	public final static String SMS_KEY = "19b598fa6bc60";
 //	public final static String SMS_SECRET = "2875b213e184bb0473decc1bd4496271";
 	public static final String PATH = Environment.getExternalStorageDirectory()

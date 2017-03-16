@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.demo.mob.activity.R;
+import com.demo.mob.utils.App;
 import com.demo.mob.utils.BaseActivity;
 import com.mob.moblink.ActionListener;
 import com.mob.moblink.MobLink;
@@ -17,7 +18,6 @@ import java.util.Map;
 
 public class Activity_A extends BaseActivity {
     private String path = "/demo/a";
-    public static final String APPKEY = "1c12352b1abd0";//正式部署到测试环境 //测试 d9b58a07cbf4
     private String source;
     private String paramStr = "";
     @Override
@@ -42,7 +42,7 @@ public class Activity_A extends BaseActivity {
     protected void onResume() {
         super.onResume();
         //初始化moblink SDK
-        MobLink.initSDK(this, APPKEY);
+        MobLink.initSDK(this, App.LINK_APPKEY);
         //设置场景还原监听
         MobLink.setIntentHandler(getIntent(), new ActionListener() {
             public void onResult(final HashMap<String, Object> res) {

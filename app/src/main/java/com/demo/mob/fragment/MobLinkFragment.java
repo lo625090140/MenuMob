@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.demo.mob.activity.R;
+import com.demo.mob.utils.App;
 import com.demo.mob.utils.BaseFragment;
 import com.demo.mob.utils.ToastUtil;
 import com.mob.moblink.ActionListener;
@@ -34,7 +35,7 @@ public class  MobLinkFragment extends BaseFragment{
     public static final String[] MAIN_PATH_ARR = {"/demo/a", "/demo/b", "/demo/c","/demo/input"};
     public static final String IP = "192.168.44.191:8185";
     public static final String SHARE_URL = "http://" + IP + "/Test";//"http://f.moblink.mob.com";
-    public static final String APPKEY = "1c12352b1abd0";//"1b8898cb51ccb";//正式部署到测试环境 //测试 d9b58a07cbf4
+
     private String mobID;
     private TextView tv;
     private int selectedID;
@@ -50,7 +51,7 @@ public class  MobLinkFragment extends BaseFragment{
 
     private void init() {
         ShareSDK.initSDK(context);
-        MobLink.initSDK(context, APPKEY);
+        MobLink.initSDK(context, App.LINK_APPKEY);
         view.findViewById(R.id.mobid).setOnClickListener(this);
         view.findViewById(R.id.share).setOnClickListener(this);
         (tv = (TextView) view.findViewById(R.id.text)).setOnClickListener(this);

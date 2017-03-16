@@ -24,6 +24,11 @@ public abstract class BaseFragment extends Fragment implements Callback,OnClickL
     protected View view;
     //获取布局文件ID
     protected abstract int getLayoutId();
+
+    protected View getViews() {
+        return null;
+    }
+
     protected abstract void initContentView(Bundle savedInstanceState);
     public abstract boolean handleMessage(Message msg);
     public abstract void onClick(View view);
@@ -31,6 +36,7 @@ public abstract class BaseFragment extends Fragment implements Callback,OnClickL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.e(Tag,"onCreateView");
+        view = getViews();
         context = getActivity();
         if (view == null){
             view = inflater.inflate(getLayoutId(),container,false);
