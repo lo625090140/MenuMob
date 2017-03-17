@@ -25,6 +25,7 @@ import java.util.HashMap;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
+import cn.sharesdk.onekeyshare.ShareContentCustomizeCallback;
 import cn.sharesdk.wechat.friends.Wechat;
 
 /**
@@ -39,6 +40,7 @@ public class  MobLinkFragment extends BaseFragment{
     private String mobID;
     private TextView tv;
     private int selectedID;
+    private String shareUrl;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_moblink;
@@ -96,13 +98,13 @@ public class  MobLinkFragment extends BaseFragment{
                 });
                 break;
             case R.id.share:
-                String shareUrl = SHARE_URL + MAIN_PATH_ARR[selectedID] + ".html";
+                shareUrl = SHARE_URL + MAIN_PATH_ARR[selectedID] + ".html";
                 if (!TextUtils.isEmpty(mobID)) {
                     shareUrl += "?mobid=" + mobID;
                     // "http://f.moblink.mob.com/demo/a/?mobid="+mobID
                 }
                 String title = "我是测试的Title";
-                String text = "我是测试的Text";
+                final String text = "我是测试的Text";
                 String imgPath = copyImgToSD(context, R.mipmap.ic_launcher , "moblink");
                 OnekeyShare oks = new OnekeyShare();
                 oks.setTitle(title);;
@@ -110,6 +112,15 @@ public class  MobLinkFragment extends BaseFragment{
                 oks.setImagePath(imgPath);
                 oks.setUrl(shareUrl);
                 oks.setTitleUrl(shareUrl);
+                oks.setShareContentCustomizeCallback(new ShareContentCustomizeCallback() {
+                    @Override
+                    public void onShare(Platform platform, Platform.ShareParams paramsToShare) {
+                        if (platform.getName().equals("SinaWeibo")){
+                            paramsToShare.setText(text + "\n" + shareUrl);
+                            paramsToShare.setUrl(null);
+                        }
+                    }
+                });
                 Platform[] plats = ShareSDK.getPlatformList();
                 for (Platform p : plats) {
                     if (!(p.getName().equals("SinaWeibo") ||
