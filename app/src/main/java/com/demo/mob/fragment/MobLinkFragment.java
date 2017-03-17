@@ -77,6 +77,7 @@ public class  MobLinkFragment extends BaseFragment{
         switch (view.getId()){
             case R.id.mobid:
                 HashMap<String, Object> params = new HashMap<String, Object>();
+                params.put("AppClient","我可以用来还原场景啊");
                 String source = "mob";
                 MobLink.getMobID(params, MAIN_PATH_ARR[selectedID], source, new ActionListener() {
                     public void onResult(HashMap<String, Object> params) {
