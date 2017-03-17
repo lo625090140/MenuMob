@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.util.ArrayList;
@@ -79,7 +80,12 @@ public class HttpFragment extends BaseFragment{
         //OkHttpClient okHttpClient = new OkHttpClient(); 提升为全局不至于每次都new
         //2.构造Request
         Request.Builder builder = new Request.Builder();
-        Request request = builder.get().url(baseurl + "login?username=haha&password=123").build();
+        Request request = null;
+        try {
+            request = builder.get().url("http://wthrcdn.etouch.cn/weather_mini?city=" + java.net.URLEncoder.encode(((EditText)view.findViewById(R.id.okhttp_city)).getText().toString().trim(),"UTF-8")).build();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
         executeRequest(request);
     }

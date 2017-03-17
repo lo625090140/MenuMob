@@ -185,7 +185,6 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
                 icon.setImageBitmap(bitms);
                 break;
         }
-
         return false;
     }
 
