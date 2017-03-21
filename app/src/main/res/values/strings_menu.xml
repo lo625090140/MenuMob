@@ -9,6 +9,7 @@
         <item>Rec,5,RecFragment</item>
         <item>MobLink,6,MobLinkFragment</item>
         <item>Http,7,HttpFragment</item>
+        <item>BBS,8,BbsFragment</item>
     </string-array>
     <string-array
         name="params">
