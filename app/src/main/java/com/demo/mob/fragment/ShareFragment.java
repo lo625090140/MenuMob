@@ -1,5 +1,6 @@
 package com.demo.mob.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.ClipboardManager;
@@ -18,6 +19,7 @@ import com.demo.mob.utils.App;
 import com.demo.mob.utils.BaseFragment;
 import com.demo.mob.utils.BitmapUtil;
 import com.demo.mob.utils.InitShareSDK;
+import com.demo.mob.utils.LoginAnim;
 import com.demo.mob.utils.ToastUtil;
 
 import java.io.File;
@@ -39,10 +41,24 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
     private List<ShareItem> list;
     private HashMap<String, Platform> map;
     private EditText title, titleurl, text, url, imageurl, imagepath, sharetype,musicurl,filepath;
-    private CheckBox ShareClient;
+    private CheckBox ShareClient,BypassApproval;
     private boolean isEmpty;
     private String path;
+    private Dialog loadanim;// 加载动画
+    // 分享加载动画
+    private void ShareAnim(boolean isStart) {
+        if (isStart){
+            loadanim = new LoginAnim().login(context, "分享中...");
+        }else{
+            if (loadanim != null) loadanim.dismiss();
+        }
+    }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        ShareAnim(false);
+    }
 
     @Override
     protected int getLayoutId() {
@@ -80,6 +96,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
         musicurl = (EditText) view.findViewById(R.id.fragment_share_MusicUrl);
         sharetype = (EditText) view.findViewById(R.id.fragment_share_ShareType);
         filepath = (EditText) view.findViewById(R.id.fragment_share_FilePath);
+        BypassApproval = (CheckBox) view.findViewById(R.id.fragment_share_item_platform_BypassApproval);
         ShareClient = (CheckBox) view.findViewById(R.id.fragment_share_item_platform_judge);
         (platform_item = (ListView) view.findViewById(R.id.fragment_share_menu)).setOnItemClickListener(this);
         list = new ArrayList<ShareItem>();
@@ -109,6 +126,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
                 if(path != null ? !path.equals("") : false){
                     handler.sendEmptyMessageDelayed(200,5000,this);
                 }
+                ShareAnim(false);
                 break;
             case ShareItem.NameConstant.MSG_SHARE_ERROR:
                 Platform plat_Error = (Platform) ((Object[]) msg.obj)[0];
@@ -116,6 +134,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
                 throwable.printStackTrace();
                 setMessage(View.VISIBLE,"错误信息 : \n" + throwable.getMessage());
                 ToastUtil.show(context, "分享失败");
+                ShareAnim(false);
                 break;
             case 100:
                 isEmpty = false;
@@ -191,20 +210,31 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
 
     }
 
+
+    //判断是否绕过审核或者客户端分享的封装方法
+    private void platformDevinfo(Platform plat,String devinfo,CheckBox name){
+        if (plat.getDevinfo(devinfo) != null) {
+
+            HashMap<String, String> Client = new HashMap<String, String>();
+            if (name.isChecked()) {
+                Client.put(devinfo, "true");
+            } else {
+                Client.put(devinfo, "false");
+            }
+            InitShareSDK.Init(Client, plat.getName());
+        }
+    }
+
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Platform plat = map.get(String.valueOf(id));
 //        ToastUtil.show(context,plat.getName());
-        if (plat.getDevinfo("ShareByAppClient") != null) {
+        //是否绕过审核
+        platformDevinfo(plat,"BypassApproval",BypassApproval);
+        //是否调用客户端分享
+        platformDevinfo(plat,"ShareByAppClient", ShareClient);
 
-            HashMap<String, String> Client = new HashMap<String, String>();
-            if (ShareClient.isChecked()) {
-                Client.put("ShareByAppClient", "true");
-            } else {
-                Client.put("ShareByAppClient", "false");
-            }
-            InitShareSDK.Init(Client, plat.getName());
-        }
         plat.setPlatformActionListener(this);
         if (params().getImagePath() != null ? !params().getImagePath().equals("") : false){
             path = params().getImagePath();
@@ -225,6 +255,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
                 plat.share(params());
             }
         }
+        ShareAnim(true);
 
     }
 
@@ -247,8 +278,6 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
         }
 
     }
-
-
 
 
     @Override

@@ -254,6 +254,20 @@
             android:text="是否调用客户端分享"
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y10"
+        android:layout_marginTop="@dimen/y10"
+        android:orientation="horizontal" >
+        <CheckBox
+            android:checked="false"
+            android:id="@+id/fragment_share_item_platform_BypassApproval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否绕过审核分享"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

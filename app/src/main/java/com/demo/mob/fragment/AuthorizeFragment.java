@@ -1,5 +1,6 @@
 package com.demo.mob.fragment;
 
+import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +20,7 @@ import com.demo.mob.bean.AuthorizeItem;
 import com.demo.mob.utils.BaseFragment;
 import com.demo.mob.utils.BitmapUtil;
 import com.demo.mob.utils.InitShareSDK;
+import com.demo.mob.utils.LoginAnim;
 import com.demo.mob.utils.ToastUtil;
 import com.mob.tools.utils.Hashon;
 
@@ -45,7 +47,21 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
     private TextView nickname,message;
     private Bitmap bitms;
     private String nicknames,messages;
+    private Dialog loadanim;// 加载动画
+    // 分享加载动画
+    private void LoginAnim(boolean isStart) {
+        if (isStart){
+            loadanim = new LoginAnim().login(context, "授权中...");
+        }else{
+            if (loadanim != null) loadanim.dismiss();
+        }
+    }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        LoginAnim(false);
+    }
 
 
     @Override
@@ -139,6 +155,7 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
         plat.SSOSetting(((CheckBox)view.findViewById(R.id.fragment_authorize_item_platform_judge)).isChecked() ? false : true);
         plat.setPlatformActionListener(this);
         plat.authorize();
+        LoginAnim(true);
     }
 
     @Override
@@ -169,6 +186,7 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
                         + "\n"
                         + str;
                 message.setText(messages);
+                LoginAnim(false);
                 break;
             case AuthorizeItem.NameConstant.MSG_AUTH_ERROR :
                 Platform plat_Error = (Platform) ((Object[]) msg.obj)[0];
@@ -176,9 +194,11 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
                 ToastUtil.show(context,"授权失败");
                 messages = "错误平台:"+ getString(getResID("ssdk_" + plat_Error.getName().toLowerCase(),"string")) +"\n" + "错误信息:\n" + throwable.getMessage();
                 message.setText(messages);
+                LoginAnim(false);
                 break;
             case AuthorizeItem.NameConstant.MSG_AUTH_CANCEL :
                 ToastUtil.show(context,msg.obj.toString());
+                LoginAnim(false);
                 break;
             case 10 :
                 bitms = (Bitmap) msg.obj;
