@@ -7,7 +7,6 @@ import android.os.Environment;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
-import com.demo.mob.activity.R;
 import com.mob.MobSDK;
 import com.mob.bbssdk.BBSSDK;
 
@@ -23,6 +22,8 @@ public class App extends MultiDexApplication{
 //	public final static String SMS_SECRET = "2875b213e184bb0473decc1bd4496271";
 	public static final String PATH = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "/tupian.jpg";
+
+	//如果集成其他application的话就重写这个方法MultiDex
 	protected void attachBaseContext(Context base) {
 		super.attachBaseContext(base);
 		//DEMO中由于添加了打开PDF、word等附件的方式，添加了很多第三方库，导致dex方法数超过了64K，所以需要使用多dex的方式

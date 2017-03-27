@@ -29,6 +29,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
     compile project(':BBSSDKGUI')
-    compile files('libs/ShareSDK-SinaWeibo-2.8.01.jar')
-    compile files('libs/ShareSDK-Kakao-Core-2.8.1.jar')
 }
