@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import call.CommonOkHttpClient;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Cookie;
@@ -41,6 +42,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import request.CommonRequest;
+import request.RequestParams;
 
 /**
  * Created by chenjt on 2017/1/11.
@@ -88,6 +91,40 @@ public class HttpFragment extends BaseFragment{
         }
 
         executeRequest(request);
+
+
+//        RequestParams params = new RequestParams();
+//        try {
+//            params.put("city",java.net.URLEncoder.encode(((EditText)view.findViewById(R.id.okhttp_city)).getText().toString().trim(),"UTF-8"));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        CommonOkHttpClient.sendRequest(CommonRequest.createGetRequest("http://wthrcdn.etouch.cn/weather_mini", params), new Callback() {
+//            //失败
+//            @Override
+//            public void onFailure(Call call,final IOException e) {
+//                Logs.e(Tag,"onFailure : " + e.getMessage());
+//                getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        result.setText("onFailure : \n" + e.getMessage());
+//                    }
+//                });
+//                e.printStackTrace();
+//            }
+//            //响应,不是UI线程的回调
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                final String str = response.body().string();
+//                getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        result.setText("onResponse : \n" + str);
+//                    }
+//                });
+//                Logs.e(Tag,"onResponse : " + str);
+//            }
+//        });
     }
 
     //post请求

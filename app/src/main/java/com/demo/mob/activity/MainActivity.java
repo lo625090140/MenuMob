@@ -16,7 +16,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.demo.bmob.SavePx;
 import com.demo.mob.adapter.MenuAdapter;
 import com.demo.mob.bean.MenuItem;
 import com.demo.mob.utils.BaseActivity;
@@ -44,7 +43,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     public boolean handleMessage(Message msg) {
         switch (msg.what) {
             case 10:
-                new SavePx().uploading(this);
+//                new SavePx().uploading(this);
                 break;
             case 0:
                 isBrak = false;

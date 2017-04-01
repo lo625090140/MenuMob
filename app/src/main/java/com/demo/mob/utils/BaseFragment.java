@@ -3,15 +3,15 @@ package com.demo.mob.utils;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
+import android.os.Handler.Callback;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Handler.Callback;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+
+
 
 /**
  * Created by chenjt on 2017/1/11.
@@ -19,23 +19,33 @@ import android.view.View.OnClickListener;
 
 public abstract class BaseFragment extends Fragment implements Callback,OnClickListener {
     protected UIHandler handler = new UIHandler();
-    protected String Tag = this.getClass().getName();
+    protected String Tag = this.getClass().getSimpleName();
     protected Context context;
     protected View view;
-    //获取布局文件ID
-    protected abstract int getLayoutId();
+
+
+    /**
+     * 获取布局文件ID
+     */
+    protected int getLayoutId() {
+        return getArguments().getInt("layout");
+    }
 
     protected View getViews() {
         return view;
     }
 
     protected abstract void initContentView(Bundle savedInstanceState);
-    public abstract boolean handleMessage(Message msg);
+
+    public boolean handleMessage(Message msg) {
+        return false;
+    }
+
     public abstract void onClick(View view);
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.e(Tag,"onCreateView");
+        Logs.exercise(Tag,"onCreateView");
         context = getActivity();
         view = getViews();
         if (view == null){
@@ -49,52 +59,52 @@ public abstract class BaseFragment extends Fragment implements Callback,OnClickL
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.e(Tag,"onActivityCreated");
+        Logs.exercise(Tag,"onActivityCreated");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.e(Tag,"onStart");
+        Logs.exercise(Tag,"onStart");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.e(Tag,"onStop");
+        Logs.exercise(Tag,"onStop");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        Log.e(Tag,"onPause");
+        Logs.exercise(Tag,"onPause");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e(Tag,"onResume");
+        Logs.exercise(Tag,"onResume");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Log.e(Tag,"onDestroyView");
+        Logs.exercise(Tag,"onDestroyView");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.e(Tag,"onDestroy");
+        Logs.exercise(Tag,"onDestroy");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        Log.e(Tag,"onDetach");
+        Logs.exercise(Tag,"onDetach");
     }
 
-    protected void sendHandler(int what, Handler.Callback callback, Object... obj){
+    protected void sendHandler(int what, Callback callback, Object... obj){
         Message msg = new Message();
         msg.what = what;
         if (obj.length == 1){
