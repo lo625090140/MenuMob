@@ -34,8 +34,7 @@ import cn.sharesdk.wechat.friends.Wechat;
 
 public class  MobLinkFragment extends BaseFragment{
     public static final String[] MAIN_PATH_ARR = {"/demo/a", "/demo/b", "/demo/c","/demo/input"};
-    public static final String IP = "192.168.44.66:8185";
-    public static final String SHARE_URL = "http://" + IP + "/Test";//"http://f.moblink.mob.com";
+    public static final String SHARE_URL = "http://www.shenzoom.com";//"http://f.moblink.mob.com";
 
     private String mobID;
     private TextView tv;
@@ -91,7 +90,6 @@ public class  MobLinkFragment extends BaseFragment{
                     }
 
                     public void onError(Throwable t) {
-                        Log.e("Tag_onError", t != null ?t.getMessage() : "空的");
                         if (t != null) {
                             ToastUtil.show(context,t.getMessage());
                         }
