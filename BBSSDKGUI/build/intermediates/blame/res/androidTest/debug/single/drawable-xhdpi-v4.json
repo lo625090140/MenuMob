@@ -28,12 +28,12 @@
         "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_file_mp4.png"
     },
     {
-        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_ic_file_unknown.png",
-        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_file_unknown.png"
-    },
-    {
         "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_ic_file_word.png",
         "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_file_word.png"
+    },
+    {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_ic_file_unknown.png",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_file_unknown.png"
     },
     {
         "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_header_arrow.png",

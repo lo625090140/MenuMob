@@ -22,6 +22,24 @@ android {
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
         ]
     }
+    signingConfigs {
+
+        debug {
+            storeFile file("demokey.keystore")
+            storePassword "123456"
+            keyAlias "demokey.keystore"
+            keyPassword "123456"
+        }
+        //签名打包
+        release {
+            storeFile file("demokey.keystore")
+            storePassword "123456"
+            keyAlias "demokey.keystore"
+            keyPassword "123456"
+        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
