@@ -67,7 +67,7 @@
         <!--BBSSDK初始化 -->
         <meta-data
             android:name="Mob-AppKey"
-            android:value="1bbd456d78f24"/>
+            android:value="1bbd3fd16d288"/>// IOS 1bbd456d78f24 Android 1bbd3fd16d288
 
         <!--mob-->
         <activity
