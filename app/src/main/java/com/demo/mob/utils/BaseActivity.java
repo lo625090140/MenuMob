@@ -27,6 +27,9 @@ public abstract class BaseActivity extends AppCompatActivity implements Callback
         Logs.exercise(Tag,"onCreate");
         initContentView(savedInstanceState);
     }
+    public int getResID(String name, String type) {
+        return getResources().getIdentifier(name, type,getPackageName());
+    }
 
     protected void sendHandler(int what, Callback callback, Object... obj) {
         Message msg = new Message();

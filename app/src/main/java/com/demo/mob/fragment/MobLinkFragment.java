@@ -104,10 +104,17 @@ public class  MobLinkFragment extends BaseFragment{
                 }
                 String title = "我是测试的Title";
                 final String text = "我是测试的Text";
-                String imgPath = copyImgToSD(context, R.mipmap.ic_launcher , "moblink");
+                String imgPath = null;
+                try {
+                    imgPath = com.mob.tools.utils.BitmapHelper.saveBitmap(context, BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher));
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+//                        copyImgToSD(context, R.mipmap.ic_launcher , "moblink");
                 OnekeyShare oks = new OnekeyShare();
                 oks.setTitle(title);;
                 oks.setText(text);
+                Log.e("Tag",imgPath);
                 oks.setImagePath(imgPath);
                 oks.setUrl(shareUrl);
                 oks.setTitleUrl(shareUrl);

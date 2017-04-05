@@ -165,7 +165,6 @@
                 <data android:scheme="mlink" android:host="com.mob.moblink" android:path="/demo/b"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.demo.mob.link_activity.Activity_C"
             android:screenOrientation="portrait"

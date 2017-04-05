@@ -8,6 +8,10 @@
         "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_chooser_dialog_item_bg.xml"
     },
     {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_webview_progressbar_bg.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_webview_progressbar_bg.xml"
+    },
+    {
         "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_attachment_progressbar_bg.xml",
         "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_attachment_progressbar_bg.xml"
     },
@@ -16,11 +20,31 @@
         "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_forum_thread_list_item_bg.xml"
     },
     {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_attachment_progressbar_bg.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_attachment_progressbar_bg.xml"
+    },
+    {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_normal_press_bg.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_normal_press_bg.xml"
+    },
+    {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_attachment_btn_bg.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_attachment_btn_bg.xml"
+    },
+    {
         "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_attachment_btn_bg.xml",
         "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_attachment_btn_bg.xml"
     },
     {
         "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_normal_press_bg.xml",
         "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_normal_press_bg.xml"
+    },
+    {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_chooser_dialog_item_bg.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_chooser_dialog_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bbs_forum_thread_list_item_bg.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable\\bbs_forum_thread_list_item_bg.xml"
     }
 ]

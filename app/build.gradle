@@ -82,9 +82,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':onekeyshare')
     compile project(':moblink')
-//    compile project(':bmob')
+    compile project(':bmob')
     compile project(':rec')
-    compile project(':okHttp')
+//    compile project(':okHttp')
     compile project(':BBSSDKGUI')
     compile files('libs/poi-ooxml-3.14-20160307.jar')
 }

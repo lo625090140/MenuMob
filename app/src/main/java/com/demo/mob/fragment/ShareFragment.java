@@ -112,9 +112,6 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
         platform_item.setAdapter(adapter);
     }
 
-    private int getResID(String name, String type) {
-        return getResources().getIdentifier(name, type, context.getPackageName());
-    }
 
     @Override
     public boolean handleMessage(Message msg) {

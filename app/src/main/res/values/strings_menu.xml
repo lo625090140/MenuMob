@@ -10,6 +10,7 @@
         <item>MobLink,6,MobLinkFragment</item>
         <item>Http,7,HttpFragment</item>
         <item>BBS,8,BbsFragment</item>
+        <item>Game,9,GameFragment</item>
     </string-array>
     <string-array
         name="params">
@@ -22,5 +23,15 @@
         <item>musicurl</item>
         <item>filepath</item>
         <item>sharetype</item>
+    </string-array>
+    <string-array
+        name="game">
+        <item>one,1</item>
+        <item>two,2</item>
+        <item>three,3</item>
+        <item>four,4</item>
+        <item>five,5</item>
+        <item>six,6</item>
+        <item>seven,7</item>
     </string-array>
 </resources>

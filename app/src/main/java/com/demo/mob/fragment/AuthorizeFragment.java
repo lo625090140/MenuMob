@@ -93,9 +93,6 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
         platform_item.setAdapter(adapter);
     }
 
-    private int getResID(String name,String type){
-        return getResources().getIdentifier(name,type,context.getPackageName());
-    }
 
     //不支持授权的平台
     private boolean isSupportPlat(String plat){
