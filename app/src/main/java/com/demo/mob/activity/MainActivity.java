@@ -1,9 +1,11 @@
 package com.demo.mob.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Message;
@@ -27,6 +29,7 @@ import com.demo.mob.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 
 public class MainActivity extends BaseActivity implements OnItemClickListener {
@@ -63,8 +66,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 //        if (PermissionsUtils.hasPermission(this, Manifest.permission.READ_PHONE_STATE, PermissionsUtils.READ_PHONE_STATE)){
 //            handler.sendEmptyMessageDelayed(10, 2 * 1000, this);
 //        }
-        boolean isVersion= PermissionsUtils.morePermission(this,new String[]{Manifest.permission.READ_PHONE_STATE,Manifest.permission.WRITE_EXTERNAL_STORAGE},PermissionsUtils.MULTIPLE);
-        if(!isVersion){
+        boolean isVersion = PermissionsUtils.morePermission(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PermissionsUtils.MULTIPLE);
+        if (!isVersion) {
             handler.sendEmptyMessageDelayed(10, 2 * 1000, this);
         }
     }
@@ -82,12 +85,12 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
                 break;
             case PermissionsUtils.WRITE_EXTERNAL_STORAGE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    getFragment("com.demo.mob.fragment.ShareFragment",1, false);
+                    getFragment("com.demo.mob.fragment.ShareFragment", 1, false);
                 } else {
                     ToastUtil.show(this, "分享可能需要存储权限请先打开");
                 }
                 break;
-            case PermissionsUtils.MULTIPLE :
+            case PermissionsUtils.MULTIPLE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     handler.sendEmptyMessageDelayed(10, 2 * 1000, this);
                 } else {
@@ -100,7 +103,6 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
         }
 
     }
-
 
 
     private void setListView() {
@@ -144,12 +146,26 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         //判断碎片是否存在
-        Boolean isEmpty = map.get(String.valueOf(l)) == null ? TraverseFragment(l, map.isEmpty() ? true : false) : (Fragment) map.get(String.valueOf(l)) == fragments ? false : true;
-        if (isEmpty) {
-            fragments = (Fragment) map.get(String.valueOf(l));
-            transaction = manager.beginTransaction();
-            transaction.replace(R.id.main_content_fragment, (Fragment) map.get(String.valueOf(l)));
-            transaction.commit();
+        if (l < 100) {
+            Boolean isEmpty = map.get(String.valueOf(l)) == null ? TraverseFragment(l, map.isEmpty() ? true : false) : (Fragment) map.get(String.valueOf(l)) == fragments ? false : true;
+            if (isEmpty) {
+                fragments = (Fragment) map.get(String.valueOf(l));
+                transaction = manager.beginTransaction();
+                transaction.replace(R.id.main_content_fragment, (Fragment) map.get(String.valueOf(l)));
+                transaction.commit();
+            }
+        }else{
+            String[] items = getResources().getStringArray(R.array.menu_item);{
+                String[] item = items[i].split(",");
+                if (l == Integer.valueOf(item[1])){
+                    try {
+                        Activity activity = (Activity) Class.forName(item[2]).newInstance();
+                        startActivity(new Intent(this,activity.getClass()));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
         drawer.closeDrawer(findViewById(R.id.main_left_navigation));
     }
@@ -182,12 +198,12 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == event.KEYCODE_BACK){
-            if (!isBrak){
-                ToastUtil.show(this,"再次点击退出程序");
+        if (keyCode == event.KEYCODE_BACK) {
+            if (!isBrak) {
+                ToastUtil.show(this, "再次点击退出程序");
                 isBrak = true;
-                handler.sendEmptyMessageDelayed(0,2000,this);
-            }else {
+                handler.sendEmptyMessageDelayed(0, 2000, this);
+            } else {
                 exit(0);
             }
             return true;
