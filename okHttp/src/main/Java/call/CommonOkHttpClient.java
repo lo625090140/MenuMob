@@ -8,12 +8,15 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 
 import https.HttpsUtils;
+import listener.DisposeDataHandle;
+import listener.DisposeDataListener;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import response.CommonJsonCallback;
 
 /**
  * @author qndroid
@@ -82,9 +85,9 @@ public class CommonOkHttpClient {
      * @param callback
      * 发送具体的http/https的请求
      */
-    public static Call sendRequest(Request request, Callback callback) {
+    public static Call sendRequest(Request request, DisposeDataListener callback) {
         Call call = mOkHttpClient.newCall(request);
-        call.enqueue(callback);
+        call.enqueue(new CommonJsonCallback(new DisposeDataHandle(callback)));
         return call;
     }
 
