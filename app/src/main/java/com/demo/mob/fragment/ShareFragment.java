@@ -166,8 +166,8 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
         Platform.ShareParams sp = new Platform.ShareParams();
         sp.setTitle(title.getText().toString().trim().equals("") ? "我是测试的Title" : title.getText().toString().trim().equals("1") ? "" : title.getText().toString().trim());
         sp.setText(text.getText().toString().trim().equals("") ? "我是测试的Text" : text.getText().toString().trim().equals("1") ? "" : text.getText().toString().trim());
-        sp.setUrl(url.getText().toString().trim().equals("") ? "https://www.baidu.com" : url.getText().toString().trim().equals("1") ? "" : url.getText().toString().trim());
-        sp.setTitleUrl(titleurl.getText().toString().trim().equals("") ? "https://www.baidu.com" : titleurl.getText().toString().trim().equals("1") ? "" : titleurl.getText().toString().trim());
+        sp.setUrl(url.getText().toString().trim().equals("") ? "http://www.mob.com" : url.getText().toString().trim().equals("1") ? "" : url.getText().toString().trim());
+        sp.setTitleUrl(titleurl.getText().toString().trim().equals("") ? "http://www.mob.com" : titleurl.getText().toString().trim().equals("1") ? "" : titleurl.getText().toString().trim());
         if (!imageurl.getText().toString().trim().equals("") && !imageurl.getText().toString().trim().equals("1")) {
             sp.setImageUrl(imageurl.getText().toString().trim());
         }

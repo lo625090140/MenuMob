@@ -46,7 +46,7 @@ public abstract class BaseFragment extends Fragment implements Callback,OnClickL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Logs.exercise(Tag,"onCreateView");
-        context = getActivity().getApplicationContext();
+        context = getActivity();
         view = getViews();
         if (view == null){
             view = inflater.inflate(getLayoutId(),container,false);

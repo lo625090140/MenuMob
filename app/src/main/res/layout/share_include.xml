@@ -27,6 +27,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认:我是测试的Title"
             />
     </LinearLayout>
     <LinearLayout
@@ -53,6 +54,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认:我是测试的Text"
             />
     </LinearLayout>
     <LinearLayout
@@ -79,6 +81,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认http://www.mob.com"
             />
     </LinearLayout>
     <LinearLayout
@@ -105,6 +108,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认http://www.mob.com"
             />
     </LinearLayout>
     <LinearLayout
@@ -131,6 +135,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认https://dn-fdd8geyb.qbox.me/eb1cb2932dd8f3f1c42a.png"
             />
     </LinearLayout>
     <LinearLayout
@@ -157,6 +162,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="长按ImagePath可获取截屏路径"
             />
     </LinearLayout>
     <LinearLayout
@@ -183,6 +189,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认为空"
             />
     </LinearLayout>
 
@@ -210,6 +217,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认为空"
             />
     </LinearLayout>
 
@@ -237,6 +245,7 @@
             android:layout_marginLeft="@dimen/x5"
             android:layout_marginRight="@dimen/x10"
             android:singleLine="true"
+            android:hint="默认SHARE_WEBPAGE"
             />
     </LinearLayout>
 

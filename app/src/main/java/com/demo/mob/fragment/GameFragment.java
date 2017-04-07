@@ -81,7 +81,7 @@ public class GameFragment extends BaseFragment {
                         ToastUtil.show(context, getTime() + "秒后第" + mg.arg1 + "次摇号", getTime());
                     handler.sendMessageDelayed(msg, getTime() * 1000, this);
                 } else {
-                    ((TextView) view.findViewById(getResID("fragment_game_text_result", "id"))).setText(game.getResult());
+                    ((TextView) view.findViewById(R.id.fragment_game_text_result)).setText(game.getResult());
                     game.restart();
                 }
                 break;
