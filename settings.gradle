@@ -1,1 +1,1 @@
-include ':app', ':onekeyshare', ':bmob', ':rec', ':okHttp', ':moblink', ':BBSSDKGUI'
+include ':app', ':onekeyshare', ':bmob', ':rec', ':okHttp', ':moblink', ':BBSSDKGUI', ':universal-image-loader'

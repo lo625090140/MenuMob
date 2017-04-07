@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/okHttp/okHttp.iml" filepath="$PROJECT_DIR$/okHttp/okHttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/onekeyshare/onekeyshare.iml" filepath="$PROJECT_DIR$/onekeyshare/onekeyshare.iml" />
       <module fileurl="file://$PROJECT_DIR$/rec/rec.iml" filepath="$PROJECT_DIR$/rec/rec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/universal-image-loader/universal-image-loader.iml" filepath="$PROJECT_DIR$/universal-image-loader/universal-image-loader.iml" />
     </modules>
   </component>
 </project>

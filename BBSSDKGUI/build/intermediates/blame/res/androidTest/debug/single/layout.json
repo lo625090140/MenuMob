@@ -8,24 +8,8 @@
         "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\layout\\bbs_list_page_footer.xml"
     },
     {
-        "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bbs_list_refresh_header.xml",
-        "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\layout\\bbs_list_refresh_header.xml"
-    },
-    {
-        "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bbs_list_page_footer.xml",
-        "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\layout\\bbs_list_page_footer.xml"
-    },
-    {
         "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bbs_list_refresh_footer.xml",
         "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\layout\\bbs_list_refresh_footer.xml"
-    },
-    {
-        "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bbs_list_refresh_footer.xml",
-        "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\layout\\bbs_list_refresh_footer.xml"
-    },
-    {
-        "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bbs_forum_thread_item.xml",
-        "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\layout\\bbs_forum_thread_item.xml"
     },
     {
         "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bbs_forum_thread_item.xml",

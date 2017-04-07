@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/okHttp" />
             <option value="$PROJECT_DIR$/onekeyshare" />
             <option value="$PROJECT_DIR$/rec" />
+            <option value="$PROJECT_DIR$/universal-image-loader" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
