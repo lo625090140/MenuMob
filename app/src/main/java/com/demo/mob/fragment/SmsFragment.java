@@ -1,5 +1,6 @@
 package com.demo.mob.fragment;
 
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
@@ -15,9 +16,11 @@ import android.widget.Toast;
 import com.demo.mob.activity.R;
 import com.demo.mob.adapter.SmsAdapter;
 import com.demo.mob.bean.SmsItem;
+import com.demo.mob.receiver.SMSReceiver;
 import com.demo.mob.utils.App;
 import com.demo.mob.utils.BaseFragment;
 import com.demo.mob.utils.ToastUtil;
+import com.mob.tools.utils.DeviceHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +45,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import cn.sharesdk.facebook.Facebook;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 import cn.smssdk.utils.SMSLog;
@@ -63,6 +67,16 @@ public class SmsFragment extends BaseFragment implements AdapterView.OnItemClick
     private static final int SERVE_RESULT_COMPLETE = 4;
     private static final int SERVE_RESULT_ERROR = 5;
     private String COUNTRY_NUMBER = "86";
+    private SMSReceiver smsReceiver = new SMSReceiver(new SMSSDK.VerifyCodeReadListener() {
+        public void onReadVerifyCode(final String verifyCode) {
+            handler.post(new Runnable() {
+                public void run() {
+                    provingCode.setText(verifyCode);
+                }
+            });
+        }
+    });
+
     private EventHandler eh = new EventHandler() {
         @Override
         public void afterEvent(int event, int result, Object data) {
@@ -168,6 +182,24 @@ public class SmsFragment extends BaseFragment implements AdapterView.OnItemClick
         }
         SmsAdapter adapter = new SmsAdapter(context,menu);
         sms_menu.setAdapter(adapter);
+        try {
+            if (DeviceHelper.getInstance(getActivity()).checkPermission("android.permission.RECEIVE_SMS")) {
+                smsReceiver = new SMSReceiver(new SMSSDK.VerifyCodeReadListener() {
+                    public void onReadVerifyCode(final String verifyCode) {
+                        handler.post(new Runnable() {
+                            public void run() {
+                                provingCode.setText(verifyCode);
+                            }
+                        });
+                    }
+                });
+                getActivity().registerReceiver(smsReceiver, new IntentFilter(
+                        "android.provider.Telephony.SMS_RECEIVED"));
+            }
+        } catch (Throwable t) {
+            t.printStackTrace();
+            smsReceiver = null;
+        }
     }
 
 
@@ -301,6 +333,13 @@ public class SmsFragment extends BaseFragment implements AdapterView.OnItemClick
     public void onDestroyView() {
         super.onDestroyView();
         SMSSDK.unregisterEventHandler(eh);
+        if (smsReceiver != null) {
+            try {
+                getActivity().unregisterReceiver(smsReceiver);
+            } catch (Throwable t) {
+                t.printStackTrace();
+            }
+        }
     }
 
 

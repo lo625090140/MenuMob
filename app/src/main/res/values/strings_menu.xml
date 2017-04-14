@@ -11,6 +11,7 @@
         <item>Http,7,HttpFragment</item>
         <item>BBS,108,com.demo.mob.activity.BbsActivity</item>
         <item>Game,9,GameFragment</item>
+        <item>BaseUI,10,BaseUIFragment</item>
     </string-array>
     <string-array
         name="params">

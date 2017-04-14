@@ -51,6 +51,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
             loadanim = new LoginAnim().login(context, "分享中...");
         }else{
             if (loadanim != null) loadanim.dismiss();
+
         }
     }
 

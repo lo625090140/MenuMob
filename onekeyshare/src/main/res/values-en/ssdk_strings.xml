@@ -67,6 +67,8 @@
     <string name="ssdk_alipaymoments">Alipay Moments</string>
     <string name="ssdk_plurk">Plurk</string>
 
+	<string name="ssdk_gender_male">m</string>
+	<string name="ssdk_gender_female">f</string>
 	<string name="ssdk_share_to_qzone">Share To QZone</string>
 	<string name="ssdk_share_to_qq">Share To QQ</string>
 	<string name="ssdk_share_to_googleplus">Share To Google+</string>
