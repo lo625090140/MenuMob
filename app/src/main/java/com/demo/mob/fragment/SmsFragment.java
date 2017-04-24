@@ -67,15 +67,7 @@ public class SmsFragment extends BaseFragment implements AdapterView.OnItemClick
     private static final int SERVE_RESULT_COMPLETE = 4;
     private static final int SERVE_RESULT_ERROR = 5;
     private String COUNTRY_NUMBER = "86";
-    private SMSReceiver smsReceiver = new SMSReceiver(new SMSSDK.VerifyCodeReadListener() {
-        public void onReadVerifyCode(final String verifyCode) {
-            handler.post(new Runnable() {
-                public void run() {
-                    provingCode.setText(verifyCode);
-                }
-            });
-        }
-    });
+    private SMSReceiver smsReceiver ;
 
     private EventHandler eh = new EventHandler() {
         @Override
@@ -93,9 +85,9 @@ public class SmsFragment extends BaseFragment implements AdapterView.OnItemClick
             } else if (result == SMSSDK.RESULT_ERROR) {// 错误情况
                 Throwable throwable = (Throwable) data;
                 throwable.printStackTrace();
-                JSONObject object;
+
                 try {
-                    object = new JSONObject(throwable.getMessage());
+                    JSONObject object = new JSONObject(throwable.getMessage());
                     Message msg = new Message();
                     Bundle bundle = new Bundle();
                     bundle.putInt("status", object.optInt("status"));// 错误代码

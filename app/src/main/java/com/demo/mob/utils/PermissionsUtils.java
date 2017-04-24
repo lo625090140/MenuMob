@@ -15,6 +15,7 @@ public class PermissionsUtils {
     public static final int READ_PHONE_STATE = 0x00000001;
     public static final int ACCESS_FINE_LOCATION = 0x00000002;
     public static final int WRITE_EXTERNAL_STORAGE = 0x00000003;
+    public static final int RECEIVE_SMS = 0x00000004;
 
     public static boolean hasPermission(Activity context, String Permission, int type) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -26,7 +27,7 @@ public class PermissionsUtils {
                 return true;
             }
         }
-        return true;
+        return false;
     }
 
     public static boolean morePermission(Activity context, String[] Permissions, int type) {

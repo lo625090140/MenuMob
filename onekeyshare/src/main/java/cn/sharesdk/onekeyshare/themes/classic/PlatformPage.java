@@ -11,6 +11,7 @@ package cn.sharesdk.onekeyshare.themes.classic;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,6 +51,8 @@ public abstract class PlatformPage extends OnekeySharePage {
 	public void onCreate() {
 		activity.getWindow().setBackgroundDrawable(new ColorDrawable(0x00000000));
 		initAnims();
+//		requestLandscapeOrientation();
+//		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
 
 		LinearLayout llPage = new LinearLayout(activity);
 		llPage.setOrientation(LinearLayout.VERTICAL);

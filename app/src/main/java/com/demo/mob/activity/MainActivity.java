@@ -66,7 +66,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 //        if (PermissionsUtils.hasPermission(this, Manifest.permission.READ_PHONE_STATE, PermissionsUtils.READ_PHONE_STATE)){
 //            handler.sendEmptyMessageDelayed(10, 2 * 1000, this);
 //        }
-        boolean isVersion = PermissionsUtils.morePermission(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PermissionsUtils.MULTIPLE);
+        boolean isVersion = PermissionsUtils.morePermission(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.RECEIVE_SMS}, PermissionsUtils.MULTIPLE);
         if (!isVersion) {
             handler.sendEmptyMessageDelayed(10, 2 * 1000, this);
         }
