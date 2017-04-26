@@ -231,11 +231,13 @@
         SecretKey="Z3E7qvg3yY47qBww" 
         RedirectUrl="https://www.baidu.com"
         Enable="true" />
-    
+
+
+	<!--ClientID="236300675100-am5pm8km7md1memjevq8rl9pg5c4s4b8.apps.googleusercontent.com"-->
      <GooglePlus
     	Id="21"
         SortId="21"
-        ClientID="682795613743-cfo3a8r4va0ujja7qofr54hobt2kv3cq.apps.googleusercontent.com"
+		ClientID="682795613743-cfo3a8r4va0ujja7qofr54hobt2kv3cq.apps.googleusercontent.com"
         RedirectUrl="http://localhost"
         ShareByAppClient="false"
         Enable="true" />

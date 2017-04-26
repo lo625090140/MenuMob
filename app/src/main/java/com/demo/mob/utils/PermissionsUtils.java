@@ -23,11 +23,8 @@ public class PermissionsUtils {
                 context.requestPermissions(new String[]{Permission}, type);
                 return false;
             }
-            else {
-                return true;
-            }
         }
-        return false;
+        return true;
     }
 
     public static boolean morePermission(Activity context, String[] Permissions, int type) {
