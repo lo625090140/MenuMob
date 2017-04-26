@@ -73,6 +73,7 @@
         AppKey="568898243"
         AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
         RedirectUrl="http://www.sharesdk.cn"
+		isNewApi="true"
         ShareByAppClient="true"
         Enable="true" />
     
@@ -114,6 +115,8 @@
         SortId="4"
         AppId="wx4868b35061f87885"
         AppSecret="64020361b8ec4c99936c0e3999a9f249"
+		userName="gh_afb25ac019c9"
+		path="/page/API/pages/share/share"
         BypassApproval="false"
         Enable="true" />
     
