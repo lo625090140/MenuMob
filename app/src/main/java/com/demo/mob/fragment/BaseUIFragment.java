@@ -1,6 +1,8 @@
 package com.demo.mob.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -8,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.demo.mob.utils.BaseFragment;
 import com.demo.mob.utils.ToastUtil;
+
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -40,6 +44,7 @@ public class BaseUIFragment extends BaseFragment {
                     .subscribe((String s) -> {ToastUtil.show(context,s);});
         });
         lv.addView(btn);
+
 
         return lv;
     }

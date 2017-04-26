@@ -1,4 +1,4 @@
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.demo.mob.view.AutoDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.demo.mob.activity.MainActivity"
     android:id="@+id/smsdrawer"
@@ -6,57 +6,57 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/y10"
-            android:layout_marginTop="@dimen/y10"
+            android:layout_marginBottom="10px"
+            android:layout_marginTop="10px"
             android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/y8"
-                android:paddingLeft="@dimen/x10"
-                android:paddingRight="@dimen/x10"
-                android:paddingTop="@dimen/y8"
+                android:paddingBottom="8px"
+                android:paddingLeft="10px"
+                android:paddingRight="10px"
+                android:paddingTop="8px"
                 android:text="电话" />
 
             <EditText
                 android:id="@+id/edit_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/x10"
-                android:layout_marginRight="@dimen/x10"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
                 android:numeric="integer"
                 />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="获取文字短信" />
         <Button
             android:id="@+id/btn_Voice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="获取语音短信" />
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/y10"
@@ -66,65 +66,65 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/y8"
-                android:paddingLeft="@dimen/x10"
-                android:paddingRight="@dimen/x10"
-                android:paddingTop="@dimen/y8"
+                android:paddingBottom="8px"
+                android:paddingLeft="10px"
+                android:paddingRight="10px"
+                android:paddingTop="8px"
                 android:text="验证码" />
 
             <EditText
                 android:id="@+id/edit_proving"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/x10"
-                android:layout_marginRight="@dimen/x10"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
                 android:numeric="integer" />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <Button
             android:id="@+id/btn_proving"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="SDK验证短信" />
 
         <Button
             android:id="@+id/btn_serve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="服务器验证短信" />
 
         <TextView
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="右滑可选择国家区号" />
 
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/mmc_ok"
-        android:layout_width="@dimen/x200"
+        android:layout_width="200px"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:background="@android:color/holo_orange_light"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/y8"
-        android:paddingLeft="@dimen/x10"
-        android:paddingRight="@dimen/x10"
-        android:paddingTop="@dimen/y8" >
+        android:paddingBottom="8px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:paddingTop="8px" >
 
         <ListView
             android:id="@+id/fragment_sms_menu"
@@ -133,6 +133,6 @@
             android:listSelector="@android:color/transparent"
             android:scrollbars="none">
         </ListView>
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-</android.support.v4.widget.DrawerLayout>
+</com.demo.mob.view.AutoDrawerLayout>

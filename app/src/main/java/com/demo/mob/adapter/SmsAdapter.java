@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.demo.mob.activity.R;
 import com.demo.mob.bean.MenuItem;
 import com.demo.mob.bean.SmsItem;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 
@@ -54,6 +55,7 @@ public class SmsAdapter extends BaseAdapter{
             item.country = (TextView) view.findViewById(R.id.sms_right_menu_item_country);
             item.number = (TextView) view.findViewById(R.id.sms_right_menu_item_number);
             view.setTag(item);
+            AutoUtils.autoSize(view);
         }else{
             item = (Item) view.getTag();
         }

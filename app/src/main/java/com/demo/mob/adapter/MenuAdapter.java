@@ -14,6 +14,7 @@ import java.util.List;
 
 import com.demo.mob.activity.R;
 import com.demo.mob.bean.MenuItem;
+import com.zhy.autolayout.utils.AutoUtils;
 
 /**
  * Created by chenjt on 2017/1/9.
@@ -55,6 +56,7 @@ public class MenuAdapter extends BaseAdapter{
             view = inflater.inflate(R.layout.main_list_menu_item,null);
             item.name = (TextView) view.findViewById(R.id.main_left_navigation_menu_item_text);
             view.setTag(item);
+            AutoUtils.autoSize(view);
         }else{
             item = (Item) view.getTag();
         }

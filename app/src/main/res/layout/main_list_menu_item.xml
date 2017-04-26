@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/main_left_navigation_menu_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -10,11 +10,11 @@
             android:id="@+id/main_left_navigation_menu_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/y12"
+            android:textSize="12px"
             android:layout_centerInParent="true"
-            android:layout_marginTop="@dimen/y10"
-            android:layout_marginBottom="@dimen/y10"
+            android:layout_marginTop="10px"
+            android:layout_marginBottom="10px"
             />
-    </RelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

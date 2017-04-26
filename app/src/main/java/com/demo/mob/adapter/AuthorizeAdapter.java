@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.demo.mob.activity.R;
 import com.demo.mob.bean.AuthorizeItem;
 import com.demo.mob.fragment.AuthorizeFragment;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 
@@ -61,6 +62,7 @@ public class AuthorizeAdapter extends BaseAdapter{
             item.icon = (ImageView) view.findViewById(R.id.fragment_authorize_item_platform_icon);
             item.box = (CheckBox) view.findViewById(R.id.fragment_authorize_item_platform_judge);
             view.setTag(item);
+            AutoUtils.autoSize(view);
         }else{
             item = (Item) view.getTag();
         }

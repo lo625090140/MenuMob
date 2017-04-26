@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.55"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.4"
@@ -20,11 +20,11 @@
 
             <ImageView
                 android:id="@+id/fragment_authorize_icon"
-                android:layout_width="@dimen/x70"
-                android:layout_height="@dimen/y60"
+                android:layout_width="70px"
+                android:layout_height="60px"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/y20"
+                android:layout_marginTop="20px"
                 android:scaleType="fitXY" />
 
             <TextView
@@ -33,17 +33,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_authorize_icon"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/y30"
-                android:textSize="@dimen/y15" />
-        </RelativeLayout>
+                android:layout_marginTop="30px"
+                android:textSize="15px" />
+        </com.zhy.autolayout.AutoRelativeLayout>
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.6"
             android:background="@android:color/holo_blue_light"
-            android:orientation="vertical"
-            android:padding="5dp">
+            android:orientation="vertical">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -54,13 +53,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/MainText_color"
-                    android:textSize="@dimen/y8" />
+                    android:textSize="8px" />
             </ScrollView>
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.45"
@@ -71,8 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:listSelector="@android:color/transparent"
-            android:scrollbars="none"></ListView>
+            android:scrollbars="none"/>
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

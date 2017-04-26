@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="红球1" />
 
         <TextView
             android:id="@+id/fragment_game_ball_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
@@ -32,205 +32,205 @@
             android:id="@+id/fragment_game_button_auto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginLeft="10px"
             android:text="自动摇号"
             />
         <EditText
             android:id="@+id/fragment_game_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:singleLine="true"
             android:inputType="number"
             />
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="红球2" />
 
         <TextView
             android:id="@+id/fragment_game_ball_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="红球3" />
 
         <TextView
             android:id="@+id/fragment_game_ball_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="红球4" />
 
         <TextView
             android:id="@+id/fragment_game_ball_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="红球5" />
 
         <TextView
             android:id="@+id/fragment_game_ball_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="红球6" />
 
         <TextView
             android:id="@+id/fragment_game_ball_six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="  蓝球" />
 
         <TextView
             android:id="@+id/fragment_game_ball_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="10px"
             android:text="num"
             />
 
-    </LinearLayout>
-    <LinearLayout
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/y10"
-        android:layout_marginTop="@dimen/y10"
+        android:layout_marginBottom="10px"
+        android:layout_marginTop="10px"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/fragment_game_text_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y8"
-            android:paddingLeft="@dimen/x10"
-            android:paddingRight="@dimen/x10"
-            android:paddingTop="@dimen/y8"
+            android:paddingBottom="8px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:paddingTop="8px"
             android:text="result" />
 
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

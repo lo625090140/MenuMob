@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.demo.mob.activity.R;
 import com.demo.mob.bean.AuthorizeItem;
 import com.demo.mob.bean.ShareItem;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 
@@ -55,6 +56,7 @@ public class ShareAdapter extends BaseAdapter{
             item.name = (TextView) view.findViewById(R.id.fragment_share_item_platform_name);
             item.icon = (ImageView) view.findViewById(R.id.fragment_share_item_platform_icon);
             view.setTag(item);
+            AutoUtils.autoSize(view);
         }else{
             item = (Item) view.getTag();
         }

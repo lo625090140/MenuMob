@@ -52,6 +52,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="design_width" android:value="320"/>
+        <meta-data android:name="design_height" android:value="480"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
