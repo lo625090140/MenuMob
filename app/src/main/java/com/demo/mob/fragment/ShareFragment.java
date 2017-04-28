@@ -68,7 +68,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
 
     @Override
     protected void initContentView(Bundle savedInstanceState) {
-        ShareSDK.initSDK(context);
+//        ShareSDK.initSDK(context);
         init();
     }
 

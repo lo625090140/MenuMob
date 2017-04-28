@@ -28,7 +28,7 @@ public class App extends MultiDexApplication{
 //	public final static String SMS_SECRET = "2875b213e184bb0473decc1bd4496271";
 	public static final String PATH = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "/tupian.jpg";
-	public static String TAG = "App";
+
 
 	//如果集成其他application的话就重写这个方法MultiDex
 	protected void attachBaseContext(Context base) {
@@ -39,8 +39,8 @@ public class App extends MultiDexApplication{
 	@Override
 	public void onCreate() {
 		super.onCreate();
-
-		AECrashHelper.initCrashHandler(this,new AECHConfiguration.Builder()
+		AECrashHelper.initCrashHandler(this,
+				new AECHConfiguration.Builder()
 												.setSaveToLocal(true)
 												.setReportToServer(true)
 												.setLocalFolderPath(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Log")
@@ -57,14 +57,14 @@ public class App extends MultiDexApplication{
 		JPushInterface.setDefaultPushNotificationBuilder(builder);
 	}
 
+
+	public static String TAG = "App";
 	private void generateLogEntry(int priority,Throwable throwable) {
 		Exception sample = new Exception(throwable);
 		Timber.tag(TAG).log(priority, sample, "error");
-		goToLogViewer();
-	}
 
-	private void goToLogViewer() {
 		Intent intent = new Intent(this, LogViewerActivity.class);
 		startActivity(intent);
 	}
+
 }
