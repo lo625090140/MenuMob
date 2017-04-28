@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment implements Callback,OnClickListener {
     protected UIHandler handler = new UIHandler();
-    protected String Tag = this.getClass().getSimpleName();
+    protected String Tag = App.TAG = this.getClass().getSimpleName();
     protected Context context;
     protected View view;
 

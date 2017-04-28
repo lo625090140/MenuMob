@@ -1,0 +1,22 @@
+<manifest package="com.mauiie.aech"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application android:allowBackup="true"
+                 android:label="@string/app_name"
+                 android:supportsRtl="true"
+    >
+        <activity
+            android:theme="@style/Error_Log"
+            android:name="io.explod.android.sqllog.ui.activity.LogViewerActivity"
+            android:exported="true"/>
+
+        <provider
+            android:name="io.explod.android.sqllog.data.LogEntryProvider"
+            android:authorities="io.explod.android.sqllog.sample.logentry"
+            android:exported="true"/>
+
+        <meta-data android:name="io.explod.sqllog.log.authority" android:value="io.explod.android.sqllog.sample.logentry"/>
+
+    </application>
+
+</manifest>

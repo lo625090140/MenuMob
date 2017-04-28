@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public abstract class BaseActivity extends AppCompatActivity implements Callback, OnClickListener {
-    protected String Tag = this.getClass().getSimpleName();
+    protected String Tag = App.TAG = this.getClass().getSimpleName();
     protected UIHandler handler = new UIHandler();
 
     public boolean handleMessage(Message msg) {
