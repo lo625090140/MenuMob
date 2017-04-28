@@ -96,6 +96,7 @@ dependencies {
 //    compile project(':bmob')
     compile project(':rec')
     compile project(':okHttp')
+    compile project(':AECrashHandler')
     compile project(':BBSSDKGUI')
     compile files('libs/poi-ooxml-3.14-20160307.jar')
 }

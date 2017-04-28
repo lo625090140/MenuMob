@@ -7,6 +7,8 @@ import android.os.Environment;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.mauiie.aech.AECHConfiguration;
+import com.mauiie.aech.AECrashHelper;
 import com.mob.MobSDK;
 import com.mob.bbssdk.BBSSDK;
 
@@ -34,6 +36,12 @@ public class App extends MultiDexApplication{
 		super.onCreate();
 		MobSDK.init(this);
 		BBSSDK.registerSDK();
+		AECrashHelper.initCrashHandler(this,new AECHConfiguration.Builder()
+												.setSaveToLocal(true)
+												.setReportToServer(true)
+												.setLocalFolderPath(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Log")
+												.setReporter(ex -> {})
+												.build());
 		JPushInterface.setDebugMode(true);
 		JPushInterface.init(this);
 

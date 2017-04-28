@@ -40,12 +40,12 @@
         "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_header_arrow.png"
     },
     {
-        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_ic_close.png",
-        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_close.png"
-    },
-    {
         "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_ic_file_pdf.png",
         "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_file_pdf.png"
+    },
+    {
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_ic_close.png",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bbs_ic_close.png"
     },
     {
         "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bbs_header_load_finished.png",
