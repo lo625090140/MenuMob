@@ -44,7 +44,7 @@
             android:background="@android:color/holo_blue_light"
             android:orientation="vertical">
 
-            <ScrollView
+            <com.demo.mob.view.AutoScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none">
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/MainText_color"
                     android:textSize="8px" />
-            </ScrollView>
+            </com.demo.mob.view.AutoScrollView>
         </com.zhy.autolayout.AutoLinearLayout>
 
     </com.zhy.autolayout.AutoLinearLayout>

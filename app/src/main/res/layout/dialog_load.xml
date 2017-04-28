@@ -5,25 +5,17 @@
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     >
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:layout_centerInParent="true">
-
         <ImageView
-            android:layout_marginLeft="30px"
             android:id="@+id/img_dialog"
             android:layout_width="35px"
             android:layout_height="35px"
             android:src="@mipmap/hd_portrait_loading"
             android:background="@android:color/transparent"
-            android:layout_marginStart="140dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_marginLeft="170dp"
+            />
         <TextView
             android:id="@+id/text_dialog"
-            android:layout_marginLeft="8px"
+            android:layout_marginLeft="10px"
             android:layout_toRightOf="@id/img_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +23,5 @@
             android:textSize="12px"
             android:layout_centerVertical="true"
             android:background="@android:color/transparent"
-            android:layout_centerInParent="true"
             />
-    </com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoRelativeLayout>
