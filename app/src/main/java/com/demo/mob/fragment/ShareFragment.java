@@ -21,6 +21,7 @@ import com.demo.mob.utils.BitmapUtil;
 import com.demo.mob.utils.InitShareSDK;
 import com.demo.mob.utils.LoginAnim;
 import com.demo.mob.utils.ToastUtil;
+import com.mauiie.aech.AECrashHelper;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -68,12 +69,11 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
 
     @Override
     protected void initContentView(Bundle savedInstanceState) {
-//        ShareSDK.initSDK(context);
+        ShareSDK.initSDK(context);
         init();
     }
 
     private void init() {
-
         for (String str : getResources().getStringArray(R.array.params)) {
             if (str.equals("imagepath")){
                 view.findViewById(getResID("fragment_share_tv_" + str, "id")).setOnLongClickListener(new View.OnLongClickListener() {
@@ -127,12 +127,12 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
                 ShareAnim(false);
                 break;
             case ShareItem.NameConstant.MSG_SHARE_ERROR:
-                Platform plat_Error = (Platform) ((Object[]) msg.obj)[0];
-                Throwable throwable = (Throwable) ((Object[]) msg.obj)[1];
+                Throwable throwable = (Throwable) msg.obj;
                 throwable.printStackTrace();
                 setMessage(View.VISIBLE,"错误信息 : \n" + throwable.getMessage());
                 ToastUtil.show(context, "分享失败");
                 ShareAnim(false);
+                AECrashHelper.goActivity(context,Tag,Log.WARN,throwable,false);
                 break;
             case 100:
                 isEmpty = false;
@@ -285,7 +285,7 @@ public class ShareFragment extends BaseFragment implements AdapterView.OnItemCli
 
     @Override
     public void onError(Platform platform, int i, Throwable throwable) {
-        sendHandler(ShareItem.NameConstant.MSG_SHARE_ERROR,this,platform,throwable);
+        sendHandler(ShareItem.NameConstant.MSG_SHARE_ERROR,this,throwable);
     }
 
     @Override

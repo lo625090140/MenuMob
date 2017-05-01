@@ -10,13 +10,8 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk {
-            //选择要添加的对应cpu类型的.so库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a','x86', 'x86_64', 'mips', 'mips64'
-            // 还可以添加
-        }
+
         manifestPlaceholders = [
                 JPUSH_PKGNAME : "cn.sharesdk.demo",
                 JPUSH_APPKEY : "18361721a20fb6c936def410", //JPush上注册的包名对应的appkey.
@@ -48,6 +43,7 @@ android {
         }
     }
 
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -78,11 +74,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.0.9'
-
     compile 'cn.jiguang.sdk:jpush:3.0.1'
     compile 'cn.jiguang.sdk:jcore:1.1.0'
     compile 'com.zhy:autolayout:1.4.5'
@@ -93,7 +86,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':onekeyshare')
     compile project(':moblink')
-//    compile project(':bmob')
+    //    compile project(':bmob')
     compile project(':rec')
     compile project(':okHttp')
     compile project(':AECrashHandler')

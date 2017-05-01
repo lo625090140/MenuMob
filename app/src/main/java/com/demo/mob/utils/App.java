@@ -4,6 +4,7 @@ import android.app.Application;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Environment;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
@@ -28,6 +29,7 @@ public class App extends MultiDexApplication{
 //	public final static String SMS_SECRET = "2875b213e184bb0473decc1bd4496271";
 	public static final String PATH = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "/tupian.jpg";
+	public static String TAG = "App";
 
 
 	//如果集成其他application的话就重写这个方法MultiDex
@@ -44,7 +46,12 @@ public class App extends MultiDexApplication{
 												.setSaveToLocal(true)
 												.setReportToServer(true)
 												.setLocalFolderPath(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Log")
-												.setReporter(throwable -> {generateLogEntry(Log.ERROR,throwable);})
+												.setReporter(new AECHConfiguration.IAECHReporter() {
+													@Override
+													public void report(Throwable throwable) {
+														AECrashHelper.goActivity(App.this,TAG,Log.ERROR,throwable,true);
+													}
+												})
 												.build());
 		MobSDK.init(this);
 		BBSSDK.registerSDK();
@@ -58,13 +65,7 @@ public class App extends MultiDexApplication{
 	}
 
 
-	public static String TAG = "App";
-	private void generateLogEntry(int priority,Throwable throwable) {
-		Exception sample = new Exception(throwable);
-		Timber.tag(TAG).log(priority, sample, "error");
 
-		Intent intent = new Intent(this, LogViewerActivity.class);
-		startActivity(intent);
-	}
+
 
 }

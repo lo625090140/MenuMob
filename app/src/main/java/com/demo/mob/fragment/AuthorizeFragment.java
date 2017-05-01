@@ -22,6 +22,7 @@ import com.demo.mob.utils.BitmapUtil;
 import com.demo.mob.utils.InitShareSDK;
 import com.demo.mob.utils.LoginAnim;
 import com.demo.mob.utils.ToastUtil;
+import com.mauiie.aech.AECrashHelper;
 import com.mob.tools.utils.Hashon;
 
 import java.io.IOException;
@@ -192,6 +193,7 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
                 messages = "错误平台:"+ getString(getResID("ssdk_" + plat_Error.getName().toLowerCase(),"string")) +"\n" + "错误信息:\n" + throwable.getMessage();
                 message.setText(messages);
                 LoginAnim(false);
+                AECrashHelper.goActivity(context,Tag,Log.WARN,throwable,false);
                 break;
             case AuthorizeItem.NameConstant.MSG_AUTH_CANCEL :
                 ToastUtil.show(context,msg.obj.toString());
