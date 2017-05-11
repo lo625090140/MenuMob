@@ -11,7 +11,11 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a','x86', 'x86_64', 'mips', 'mips64'
+            // 还可以添加
+        }
         manifestPlaceholders = [
                 JPUSH_PKGNAME : "cn.sharesdk.demo",
                 JPUSH_APPKEY : "18361721a20fb6c936def410", //JPush上注册的包名对应的appkey.

@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\bbs_roll_down.xml",
-        "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\anim\\bbs_roll_down.xml"
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\bbs_roll_up.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\anim\\bbs_roll_up.xml"
     },
     {
-        "merged": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\bbs_roll_up.xml",
-        "source": "E:\\As_Src\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\anim\\bbs_roll_up.xml"
+        "merged": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\bbs_roll_down.xml",
+        "source": "D:\\AsSrc\\MenuMob\\BBSSDKGUI\\build\\intermediates\\bundles\\debug\\res\\anim\\bbs_roll_down.xml"
     }
 ]

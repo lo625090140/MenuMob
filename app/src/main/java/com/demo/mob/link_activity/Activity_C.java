@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Activity_C extends BaseActivity {
-    private String path = "/demo/c";
+    private String path = "/c";
     private String source;
     private String paramStr = "";
     @Override

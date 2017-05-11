@@ -18,7 +18,6 @@ android {
             java.srcDirs = ['src']
             aidl.srcDirs = ['src']
             res.srcDirs = ['res']
-            jniLibs.srcDirs = ['libs']
         }
     }
 }

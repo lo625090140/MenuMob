@@ -33,8 +33,8 @@ import cn.sharesdk.wechat.friends.Wechat;
  */
 
 public class  MobLinkFragment extends BaseFragment{
-    public static final String[] MAIN_PATH_ARR = {"/demo/a", "/demo/b", "/demo/c","/demo/input"};
-    public static final String SHARE_URL = "http://www.shenzoom.com";//"http://f.moblink.mob.com";
+    public static final String[] MAIN_PATH_ARR = {"/a", "/b", "/c","/input"};
+    public static final String SHARE_URL = "http://www.mobshare.top";//"http://f.moblink.mob.com";
 
     private String mobID;
     private TextView tv;

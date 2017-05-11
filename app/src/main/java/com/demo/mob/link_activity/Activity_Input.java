@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Activity_Input extends BaseActivity {
-    private String path = "/demo/input";
+    private String path = "/input";
     private String source;
     private String paramStr = "";
     @Override

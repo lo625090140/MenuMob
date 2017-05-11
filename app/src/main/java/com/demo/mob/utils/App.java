@@ -46,12 +46,7 @@ public class App extends MultiDexApplication{
 												.setSaveToLocal(true)
 												.setReportToServer(true)
 												.setLocalFolderPath(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Log")
-												.setReporter(new AECHConfiguration.IAECHReporter() {
-													@Override
-													public void report(Throwable throwable) {
-														AECrashHelper.goActivity(App.this,TAG,Log.ERROR,throwable,true);
-													}
-												})
+												.setReporter(throwable -> {AECrashHelper.goActivity(App.this,TAG,Log.ERROR,throwable,true);})
 												.build());
 		MobSDK.init(this);
 		BBSSDK.registerSDK();

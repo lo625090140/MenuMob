@@ -8,7 +8,6 @@ public class AECHConfiguration {
     private boolean reportToServer;
     private IAECHReporter reporter;
     private String localFolderPath = null;
-    private String Tag = null;
 
     public boolean isSaveToLocal() {
         return saveToLocal;
@@ -25,16 +24,12 @@ public class AECHConfiguration {
     public String getLocalFolderPath() {
         return localFolderPath;
     }
-    public String getTag() {
-        return Tag;
-    }
 
     private AECHConfiguration(Builder builder) {
         this.reporter = builder.reporter;
         this.saveToLocal = builder.saveToLocal;
         this.reportToServer = builder.reportToServer;
         this.localFolderPath = builder.localFolderPath;
-        this.Tag = builder.Tag;
     }
 
     public static class Builder {
@@ -42,7 +37,6 @@ public class AECHConfiguration {
         private boolean reportToServer = false;
         private IAECHReporter reporter = null;
         private String localFolderPath = null;
-        private String Tag = null;
 
         public Builder setLocalFolderPath(String localFolderPath) {
             this.localFolderPath = localFolderPath;
@@ -64,10 +58,6 @@ public class AECHConfiguration {
             return this;
         }
 
-        public Builder setTag(String Tag) {
-            this.Tag = Tag;
-            return this;
-        }
 
         public AECHConfiguration build() {
             AECHConfiguration configuration = new AECHConfiguration(this);

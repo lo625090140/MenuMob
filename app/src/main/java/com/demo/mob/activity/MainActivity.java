@@ -32,6 +32,7 @@ import java.util.Objects;
 
 
 public class MainActivity extends BaseActivity implements OnItemClickListener {
+    private static MainActivity mActivity;
     private ListView menu;
     private List<MenuItem> list;
     private DrawerLayout drawer;
@@ -58,6 +59,9 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 
     @Override
     protected void initContentView(Bundle savedInstanceState) {
+        if (mActivity == null){
+            mActivity = this;
+        }
         Log.e(Tag, "onCreate");
         setContentView(R.layout.activity_main);
         manager = getFragmentManager();
@@ -196,20 +200,22 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == event.KEYCODE_BACK) {
-            if (!isBrak) {
-                ToastUtil.show(this, "再次点击退出程序");
-                isBrak = true;
-                handler.sendEmptyMessageDelayed(0, 2000, this);
-            } else {
-                exit(0);
-            }
-            return true;
+    public void onBackPressed() {
+        if (!isBrak) {
+            ToastUtil.show(this, "再次点击退出程序");
+            isBrak = true;
+            handler.sendEmptyMessageDelayed(0, 2000, this);
+        } else {
+            exit(0);
         }
-        return super.onKeyDown(keyCode, event);
-
     }
 
+    public static void launcherMainIfNecessary(Activity current) {
+        if (null == mActivity) {
+            Intent intent = new Intent(current, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            current.startActivity(intent);
+        }
+    }
 
 }

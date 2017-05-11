@@ -164,7 +164,7 @@
 
                 <data
                     android:host="com.mob.moblink"
-                    android:path="/demo/a"
+                    android:path="/a"
                     android:scheme="mlink" />
             </intent-filter>
         </activity>
@@ -182,7 +182,7 @@
 
                 <data
                     android:host="com.mob.moblink"
-                    android:path="/demo/b"
+                    android:path="/b"
                     android:scheme="mlink" />
             </intent-filter>
         </activity>
@@ -199,7 +199,7 @@
 
                 <data
                     android:host="com.mob.moblink"
-                    android:path="/demo/c"
+                    android:path="/c"
                     android:scheme="mlink" />
             </intent-filter>
         </activity>
@@ -216,7 +216,7 @@
 
                 <data
                     android:host="com.mob.moblink"
-                    android:path="/demo/input"
+                    android:path="/input"
                     android:scheme="mlink" />
             </intent-filter>
         </activity>

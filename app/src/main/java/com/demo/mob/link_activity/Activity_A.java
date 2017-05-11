@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.demo.mob.activity.MainActivity;
 import com.demo.mob.activity.R;
 import com.demo.mob.utils.App;
 import com.demo.mob.utils.BaseActivity;
@@ -17,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Activity_A extends BaseActivity {
-    private String path = "/demo/a";
+    private String path = "/a";
     private String source;
     private String paramStr = "";
     @Override
@@ -75,4 +76,5 @@ public class Activity_A extends BaseActivity {
         super.onNewIntent(intent);
         setIntent(intent);
     }
+
 }

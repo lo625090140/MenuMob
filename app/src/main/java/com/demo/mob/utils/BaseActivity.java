@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.demo.mob.activity.MainActivity;
+
 public abstract class BaseActivity extends AppCompatActivity implements Callback, OnClickListener {
     protected String Tag = App.TAG = this.getClass().getSimpleName();
     protected UIHandler handler = new UIHandler();
@@ -50,7 +52,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Callback
         System.exit(i);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MainActivity.launcherMainIfNecessary(this);
+    }
 
     @Override
     protected void onRestart() {

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
@@ -151,6 +152,7 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
             return;
         }
         plat.SSOSetting(((CheckBox)view.findViewById(R.id.fragment_authorize_item_platform_judge)).isChecked() ? false : true);
+        plat.removeAccount();
         plat.setPlatformActionListener(this);
         plat.authorize();
         LoginAnim(true);
@@ -180,7 +182,7 @@ public class AuthorizeFragment extends BaseFragment implements AdapterView.OnIte
                     Object value = entry.getValue();
                     str.append(key + " : " + value.toString().trim() + "\n\n");
                 }
-                messages = getString(getResID("ssdk_" + plat_Complete.getName().toLowerCase(),"string")) + "信息:"
+                messages =  getString(getResID("ssdk_" + plat_Complete.getName().toLowerCase().trim(),"string")) + "信息:"
                         + "\n"
                         + str;
                 message.setText(messages);
